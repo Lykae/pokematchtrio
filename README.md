@@ -5,7 +5,7 @@
 ## PokeMatchTrio
 
 This is Mahjong Solitaire but with your favorite creatures.
-You have to obtain them elsewhere though: ![SpriteCollab GitHub Page]([https://github.com/PMDCollab/SpriteCollab])
+You have to obtain them elsewhere though: https://github.com/PMDCollab/SpriteCollab
 Download the portrait folder and put it into public/assets/ and src/assets
 
 ## Installation
