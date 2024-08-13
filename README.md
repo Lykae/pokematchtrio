@@ -16,10 +16,10 @@ You have to obtain them elsewhere though.
 ```pnpm install```
 
 Check if everything is good by running:
-```pnpm dev run```
+```pnpm run dev```
 
 Afterwards you can build the project with:
-```pnpm dev build```
+```pnpm run build```
 
 The result will be saved in dist, and this is the folder you want to serve to the web, for example with Python:
 ```
