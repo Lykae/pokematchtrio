@@ -4,10 +4,17 @@ interface Game {
   removeList: Ref<CardNode[]>;
   removeFlag: Ref<boolean>;
   backFlag: Ref<boolean>;
+  undoHistoryList: Ref<HistoryGame[]>;
+  score: Ref<number>;
+  curLevel: Ref<number>;
   handleSelect: (node: CardNode) => void;
   handleSelectRemove: (node: CardNode) => void;
   handleBack: () => void;
   handleRemove: () => void;
+  handleHint: () => void;
+  handleReset: () => void;
+  handleUndo: () => void;
+  handleSeed: () => void;
   initData: (config?: GameConfig) => void;
 }
 interface GameConfig {
@@ -23,7 +30,21 @@ interface GameEvents {
   clickCallback?: () => void, 
   dropCallback?: () => void, 
   winCallback?: () => void, 
+  resetCallback?: () => void, 
   loseCallback?: () => void
+}
+
+interface HistoryGame {
+  //nodes: Ref<CardNode[]>;
+  //selectedNodes: Ref<CardNode[]>;
+  //removeList: Ref<CardNode[]>;
+  //removeFlag: Ref<boolean>;
+  //score: Ref<number>;
+  nodes: CardNode[];
+  selectedNodes: CardNode[];
+  removeList: CardNode[];
+  removeFlag: boolean;
+  score: number;
 }
 
 // 卡片节点类型
@@ -38,4 +59,28 @@ type CardNode = {
   top: number
   left: number
   state: number        // 是否可点击 0： 无状态  1： 可点击 2：已选 3：已消除
+  pokemon: Pokemon;
+  imageLoaded?: boolean = false;
+  hintHighlight?: boolean = false;
+}
+
+class Ability {
+  name: string
+  is_hidden: boolean
+}
+
+class PokeGame {
+  game_index: number
+  version: string
+}
+
+class Pokemon {
+  abilities?: Ability[]
+  types: string[]
+  species?: string
+  moves?: string[]
+  games?: PokeGame[]
+  name: string
+  id: number;
+  imageSource?: URL;
 }

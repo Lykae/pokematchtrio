@@ -1,0 +1,7 @@
+{
+  "name": "PokeMatchTrio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

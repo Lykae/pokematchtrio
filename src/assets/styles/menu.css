@@ -1,0 +1,175 @@
+.phone-frame {
+  /*background-color: #353535;
+  border-radius: 30px;*/
+  box-shadow: 0 0.4px 1px rgba(0, 0, 0, 0.026), 0 1px 2.3px rgba(0, 0, 0, 0.045),
+    0 1.9px 4.4px rgba(0, 0, 0, 0.065), 0 3.4px 7.8px rgba(0, 0, 0, 0.094),
+    0 6.3px 14.6px rgba(0, 0, 0, 0.145), 0 15px 35px rgba(0, 0, 0, 0.25);
+  width: 240px;
+  height: 480px;
+  padding: 5px;
+}
+.phone-screen {
+  align-items: center;
+  /*background-color: #000;*/
+  /*border-radius: 26px;*/
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  perspective: 460px;
+  /*position: relative;*/
+  width: 100%;
+}
+.imageContainer {
+  overflow: hidden;
+  transform-origin: 100% 0;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+.active .imageContainer {
+  transform: rotateX(-45deg);
+}
+.image {
+  left: -76%;
+  position: relative;
+  width: 250%;
+}
+.overlay {
+  background: linear-gradient(#0000001f 0%, #0000009f 80%, #000000bf 100%);
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  top: 0;
+  width: 100%;
+}
+.active .overlay {
+  opacity: 1;
+  z-index: 10;
+}
+.button-menu {
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+}
+.button-menu1 {
+  bottom: 0px;
+  /*cursor: pointer;*/
+  fill: none;
+  height: 38px;
+  /* left: 35px; */
+  padding: 1vh;
+  -webkit-tap-highlight-color: transparent;
+  width: 38px;
+}
+
+
+.button-settings {
+  opacity: 0;
+  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+}
+.button-settings1 {
+  position: absolute;
+  bottom: 10vh;
+  /*cursor: pointer;*/
+  fill: none;
+  height: 2.2em;
+  /* left: 35px; */
+  padding: 5px;
+  -webkit-tap-highlight-color: transparent;
+  /*width: 24px;*/
+  width: 2.2em;
+}
+.button-settings-show {
+  opacity: 1;
+  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.bg {
+  fill: #282828;
+}
+.button-menu1:active .bg {
+  fill: #555;
+}
+.line {
+  stroke: #fff;
+  stroke-width: 2;
+  transition: stroke 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: 50%;
+}
+.active .line1 {
+  stroke: #50cea1;
+  transform: translateX(-2.5px) translateY(3px) rotate(45deg);
+}
+.active .line2 {
+  stroke: #50cea1;
+  transform: scale(0);
+}
+.active .line3 {
+  stroke: #50cea1;
+  transform: translateX(-2.5px) translateY(-3px) rotate(-45deg);
+}
+.active .button-menu {
+  transform: translateY(-180px);
+}
+.menu {
+  /*background: linear-gradient(rgb(131 63 63), transparent),
+    linear-gradient(to top left, rgb(47 144 120), transparent),
+    linear-gradient(to top right, rgb(94 94 160), transparent);
+  background-blend-mode: screen;*/
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: 20vh;
+  position: absolute;
+  transform: translateY(192px);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  z-index: 100;
+}
+
+.option {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  width: 5em;
+  margin: auto;
+}
+.option:active::after {
+  background-color: #000;
+  content: " ";
+  opacity: 0.25;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.food {
+  height: 40px;
+  width: 40px;
+}
+.active .menu {
+  transform: translateY(0);
+}
+
+.japanese {
+  font-weight: 600;
+  font-family: sans-serif;
+  font-size: 0.7em;
+}
+.roman {
+  /*font-family: sans-serif;*/
+  font-size: 0.7em;
+  font-weight: 600;
+}
+  

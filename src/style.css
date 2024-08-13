@@ -45,7 +45,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
+  /*cursor: pointer;*/
   transition: border-color 0.25s;
 }
 button:hover {
@@ -80,4 +80,28 @@ html{
   button {
     background-color: #f9f9f9;
   }
+}
+
+.removedTile {
+  scale: 1.2 !important;
+}
+
+.aboutToBeDroppedTile {
+  top: 50%;
+}
+
+
+
+.collectedTile {
+  /*box-shadow: 1px 5px 5px -1px #000 !important;*/
+  margin-right: 3px;
+  
+  scale: 1 !important;
+}
+
+.collectionBox {
+  padding-top: 5px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 320px;
 }

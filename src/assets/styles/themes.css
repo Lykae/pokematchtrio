@@ -1,0 +1,18 @@
+.theme_red {
+    background: linear-gradient(90deg, #db3434, #bc1a1a);
+    color: #000;
+    border-color: #000;
+}
+
+.theme_blue {
+    /*background: linear-gradient(90deg, #3498db, #1abc9c);*/
+  background: linear-gradient(75deg, rgb(0, 41, 48), rgb(61, 49, 63), rgb(79, 75, 136), rgb(1, 15, 12));
+    color: #fff;
+    border-color: #fff;
+}
+
+.theme_blue .menuButton {
+    color: #fff;
+}
+
+
