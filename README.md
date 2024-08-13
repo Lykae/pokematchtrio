@@ -1,96 +1,25 @@
-<img src="https://cdn.staticaly.com/gh/chenxch/pic-image@master/20220929/image-31.5wzs9gnp33k.webp" />
+
+![pokematchtrio](https://github.com/user-attachments/assets/fe1c9dba-592a-4460-b0d7-c6b6e7823a3e)
 
 
-## ⭐ Stargazers
+## PokeMatchTrio
 
-Many thanks to the kind individuals who leave a star.
-Your support is much appreciated!
-[![Stargazers for xlegex}](https://reporoster.com/stars/chenxch/xlegex)](https://github.com/chenxch/xlegex/stargazers)
+This is Mahjong Solitaire but with your favorite creatures.
+You have to obtain them elsewhere though: ![SpriteCollab GitHub Page]([https://github.com/user-attachments/assets/fe1c9dba-592a-4460-b0d7-c6b6e7823a3e](https://github.com/PMDCollab/SpriteCollab))
+Download the portrait folder and put it into public/assets/ and src/assets
 
+## Installation
+```pnpm install```
 
-# xlegex / x了个X
+Check if everything is good by running:
+```pnpm dev run```
 
-This is a match-3 game, a simplified version of the sheep, currently based on rabbits, you can customize your own game based on this.
+Afterwards you can build the project with:
+```pnpm dev build```
 
-这是一个三消类的游戏，简化版的羊了个羊，目前是以兔子为素材，你可以基于这个定制你自己的游戏。
-
-
-
-[Online Demo / 在线demo](https://chenxch.github.io/xlegex/)
-
-## Game screenshot / 游戏截图
-![QQ浏览器截图20220922214942](https://cdn.staticaly.com/gh/chenxch/pic-image@master/20220929/tutu.4jhzwxilnfs0.gif)
-
-
-## Core Code / 核心代码
-```ts
-// useGame.ts
-useGame(config: GameConfig): Game{
-  ...
-}
+The result will be saved in dist, and this is the folder you want to serve to the web, for example with Python:
 ```
-
-### 
-```ts
-// type.d.ts
-interface Game {
-  nodes: Ref<CardNode[]>
-  selectedNodes: Ref<CardNode[]>
-  removeList: Ref<CardNode[]>
-  removeFlag: Ref<boolean>
-  backFlag: Ref<boolean>
-  handleSelect: (node: CardNode) => void
-  handleSelectRemove: (node: CardNode) => void
-  handleBack: () => void
-  handleRemove: () => void
-  initData: (config?: GameConfig) => void
-}
-interface GameConfig {
-  container?: Ref<HTMLElement | undefined> // cardNode容器
-  cardNum: number // card类型数量
-  layerNum: number // card层数
-  trap?: boolean //  是否开启陷阱
-  delNode?: boolean //  是否从nodes中剔除已选节点
-  events?: GameEvents //  游戏事件
-}
-
-interface GameEvents {
-  clickCallback?: () => void
-  dropCallback?: () => void
-  winCallback?: () => void
-  loseCallback?: () => void
-}
+cd dist
+python -m http.server
 ```
-
-## Application / 应用
-```ts
-const {
-  nodes,
-  selectedNodes,
-  handleSelect,
-  handleBack,
-  backFlag,
-  handleRemove,
-  removeFlag,
-  removeList,
-  handleSelectRemove,
-  initData,
-} = useGame({
-  container: containerRef,
-  cardNum: 4,
-  layerNum: 2,
-  trap: false,
-  events: {
-    clickCallback: handleClickCard,
-    dropCallback: handleDropCard,
-    winCallback: handleWin,
-    loseCallback: handleLose,
-  },
-})
-
-initData()
-```
-
-## Related Articles / 相关文章
-[juejin/掘金](https://juejin.cn/post/7147245442172977189)
 
