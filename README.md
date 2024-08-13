@@ -11,6 +11,8 @@ You have to obtain them elsewhere though.
  https://github.com/PMDCollab/SpriteCollab
 
  Download the portrait folder from the link above and put it into ```public/assets/``` and ```src/assets```
+
+ Afterwards run
 ```pnpm install```
 
 Check if everything is good by running:
