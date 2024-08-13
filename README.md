@@ -1,8 +1,9 @@
 
-![pokematchtrio](https://github.com/user-attachments/assets/fe1c9dba-592a-4460-b0d7-c6b6e7823a3e)
-
 
 ## PokeMatchTrio
+
+![pokematchtrio](https://github.com/user-attachments/assets/fe1c9dba-592a-4460-b0d7-c6b6e7823a3e)
+
 
 This is Mahjong Solitaire but with your favorite creatures.
 You have to obtain them elsewhere though.
