@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import Card from './components/card.vue'
-import SettingsMenu from './components/SettingsMenu.vue'
-import CreditsMenu from './components/CreditsMenu.vue'
 import { useGame } from './core/useGame'
 import { basicCannon, schoolPride } from './core/utils'
-import { fileURLToPath } from 'url';
-import { over, shuffle } from 'lodash-es';
-import { StatusBar, Style } from '@capacitor/status-bar';
 import PinchZoom from 'pinch-zoom-js';
 //import {AndroidFullScreen} from '@awesome-cordova-plugins/android-full-screen'
 //import isPlatform from '@ionic/vue';
@@ -290,6 +285,29 @@ function handleShowTutorial() {
           Sound - Turn sound on or off`)
 }
 
+function handleFullscreen() {
+  if (isInFullScreen()) {
+    const cancellFullScreen = document.exitFullscreen;
+    cancellFullScreen.call(document);
+  } else {
+  var el = document.documentElement,
+    rfs = el.requestFullscreen;
+  if(typeof rfs!="undefined" && rfs){
+    rfs.call(el);
+  } else {
+    alert("Can't go fullscreen")
+  }
+  }
+}
+
+function isInFullScreen() {
+  const document: any = window.document;
+  return (document.fullscreenElement && document.fullscreenElement !== null) ||
+        (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
+        (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
+        (document.msFullscreenElement && document.msFullscreenElement !== null);
+}
+
 function handleToggleSound() {
   allowPlaySounds.value = !allowPlaySounds.value;
   localStorage.setItem("allowPlaySounds", allowPlaySounds.value ? 'true' : 'false');
@@ -473,6 +491,11 @@ onMounted(() => {
       <div class="option" @click="handleShowTutorial">
         <div class="japanese">チュートリアル</div>
         <div class="roman">Tutorial</div>
+      </div>
+      
+      <div class="option" @click="handleFullscreen">
+        <div class="japanese">全画面表示</div>
+        <div class="roman">Fullscreen</div>
       </div>
       <!--
       <div class="option" @click="handleShowCredits">

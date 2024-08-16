@@ -309,17 +309,13 @@ function getNodeDeepCopy(node: CardNode): CardNode {
             selectedNodes.value.splice(i, 1);
           }
         }
-        for (let i = 0; i < selectedNodes.value.length; i++) {
-        }
         preNode.value = null
+        events.dropCallback && events.dropCallback()
         // Determine if the node has been cleared, i.e., if it is winning
         if (delNode ? nodes.value.length === 0 : nodes.value.every(o => o.state > 0) && removeList.value.length === 0 && selectedNodes.value.length === 0) {
           removeFlag.value = true
           backFlag.value = true
           events.winCallback && events.winCallback()
-        }
-        else {
-          events.dropCallback && events.dropCallback()
         }
       }, 2000 )
     }
