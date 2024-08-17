@@ -278,12 +278,14 @@ function handleShowCredits() {
 
 function handleShowTutorial() {
   alert(`Match three Pokemon with the same type! \n
-          Pokemon with two types only count as one of their types, you will have to figure it out~ \n
-          Click the arrow to enable/disable menu.\n
-          Move - Moves the first three tiles in the collection box back onto the field.\n
-          Hint - Click on a tile to show info about the Pokemon\n
-          Special - Advance to next stage (cheat)\n
-          Sound - Turn sound on or off`)
+        Pokemon with two types only count as one of their types, you will have to figure it out~ \n
+        Click the arrow to enable/disable menu.\n
+        Move - Moves the first three tiles in the collection box back onto the field.\n
+        Hint - Click on a tile to show info about the Pokemon\n
+        Special - Advance to next stage (cheat)\n
+        Sound - Turn sound on or off\n
+        Seed - Give your seed to someone else and they will get the same puzzle\n
+        Fullscreen - Turn fullscreen on or off`)
 }
 
 function handleFullscreen() {
@@ -572,8 +574,8 @@ onMounted(() => {
     <div class="spacer"></div>
     
     <div class="credits" v-if="!menuActive">
-      <div class="dev">@Lykae</div>
-      <a href="https://sprites.pmdcollab.org" class="sprites">@Sprites</a>
+      <a href="https://github.com/Lykae/pokematchtrio" target="_blank" class="dev">@Lykae</a>
+      <a href="https://sprites.pmdcollab.org" target="_blank" class="sprites">@Sprites</a>
     </div>
     <audio
       ref="clickAudioRef"
