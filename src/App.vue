@@ -115,6 +115,7 @@ function handlePokedex() {
 
 function handleAppReset() {
   curLevel.value = 0
+  score.value = 0
   initData(LevelConfig[curLevel.value])
   curLevel.value++;
 }
