@@ -143,7 +143,7 @@
   justify-content: center;
   position: relative;
   -webkit-tap-highlight-color: transparent;
-  width: 8em;
+  width: 7em;
   margin: auto;
 }
 .option:active::after {
