@@ -31,6 +31,7 @@ export function useGame(this: any, config: GameConfig): Game {
   const selectedNodes = ref<CardNode[]>([])
   const size = 40
   const scale = 1.5
+  let pokeTypes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
   let floorList: number[][] = []
 
   let seed = random.randRange(0, 2147483647);;
@@ -453,19 +454,18 @@ function getNodeDeepCopy(node: CardNode): CardNode {
       if (selectedTypes.length >= types.length) {
         break;
       }
-      var randomNumber = randomSeeded.randRange(0, types.length - 1);
+      
+      pokeTypes = randomSeeded.shuffle(randomSeeded.shuffle(pokeTypes));
+      var randomNumber = pokeTypes[0];
       while (true) {
-        if (selectedTypes.length === types.length) {
-          randomNumber = randomSeeded.randRange(0, types.length - 1);
-          break;
-        } else {
           if (selectedTypes.includes(randomNumber)) {
-            randomNumber = randomSeeded.randRange(0, types.length - 1);
+            pokeTypes = randomSeeded.shuffle(randomSeeded.shuffle(pokeTypes));
+            var randomNumber = pokeTypes[0];
           } else {
             break;
           }
-        }
       }
+      console.log("typeNumber", randomNumber);
       selectedTypes.push(randomNumber);
     } 
 
